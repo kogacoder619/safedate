@@ -4,9 +4,9 @@ A React Native dating app built with Expo. Browse profiles, match, and chat — 
 
 ## Screenshots
 
-| Phone Verify | Discover | Matches | Chat | Profile |
-|---|---|---|---|---|
-| ![Phone Verify](screenshots/phone-verify.png) | ![Discover](screenshots/discover.png) | ![Matches](screenshots/matches.png) | ![Chat](screenshots/chat.png) | ![Profile](screenshots/profile.png) |
+| Phone Verify | Discover | Matches | Chat | Safety Check | Profile |
+|---|---|---|---|---|---|
+| ![Phone Verify](screenshots/phone-verify.png) | ![Discover](screenshots/discover.png) | ![Matches](screenshots/matches.png) | ![Chat](screenshots/chat.png) | ![Safety Check](screenshots/background-check.png) | ![Profile](screenshots/profile.png) |
 
 ## Features
 
