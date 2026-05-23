@@ -9,6 +9,7 @@ export interface UserProfile {
   interestedIn: Gender[];
   photos: string[];
   location?: string;
+  phoneVerified?: boolean;
 }
 
 export interface Match {
@@ -26,10 +27,19 @@ export interface Message {
   read: boolean;
 }
 
+export interface GarboResult {
+  sexOffenderHit: boolean;
+  violentCrimes: string[];
+  otherRecords: string[];
+  checkedAt: string;
+}
+
 export type RootStackParamList = {
+  PhoneVerify: undefined;
   Main: undefined;
   Chat: { matchId: string };
   EditProfile: undefined;
+  BackgroundCheck: { matchId: string; profileName: string };
 };
 
 export type MainTabParamList = {

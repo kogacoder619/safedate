@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Match, Message, UserProfile } from '../types';
+import { GarboResult, Match, Message, UserProfile } from '../types';
 import { CURRENT_USER, MOCK_PROFILES } from '../data/mockProfiles';
 
 interface AppState {
@@ -7,11 +7,16 @@ interface AppState {
   discoverQueue: UserProfile[];
   matches: Match[];
   messages: Record<string, Message[]>;
+  phoneVerified: boolean;
+  verifiedPhone: string | null;
+  backgroundChecks: Record<string, GarboResult>;
 
   likeProfile: (profileId: string) => void;
   passProfile: (profileId: string) => void;
   sendMessage: (matchId: string, text: string) => void;
   updateProfile: (updates: Partial<UserProfile>) => void;
+  setPhoneVerified: (phone: string) => void;
+  addBackgroundCheck: (matchId: string, result: GarboResult) => void;
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -19,6 +24,9 @@ export const useAppStore = create<AppState>((set, get) => ({
   discoverQueue: MOCK_PROFILES,
   matches: [],
   messages: {},
+  phoneVerified: false,
+  verifiedPhone: null,
+  backgroundChecks: {},
 
   likeProfile: (profileId) => {
     const { discoverQueue, matches } = get();
@@ -61,5 +69,15 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   updateProfile: (updates) => {
     set((state) => ({ currentUser: { ...state.currentUser, ...updates } }));
+  },
+
+  setPhoneVerified: (phone) => {
+    set({ phoneVerified: true, verifiedPhone: phone });
+  },
+
+  addBackgroundCheck: (matchId, result) => {
+    set((state) => ({
+      backgroundChecks: { ...state.backgroundChecks, [matchId]: result },
+    }));
   },
 }));

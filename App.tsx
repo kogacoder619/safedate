@@ -10,6 +10,8 @@ import MatchesScreen from './src/screens/MatchesScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import ChatScreen from './src/screens/ChatScreen';
 import EditProfileScreen from './src/screens/EditProfileScreen';
+import PhoneVerifyScreen from './src/screens/PhoneVerifyScreen';
+import BackgroundCheckScreen from './src/screens/BackgroundCheckScreen';
 import { MainTabParamList, RootStackParamList } from './src/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -44,9 +46,11 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator>
+        <Stack.Screen name="PhoneVerify" component={PhoneVerifyScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
         <Stack.Screen name="Chat" component={ChatScreen} options={{ title: 'Chat' }} />
         <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Edit Profile' }} />
+        <Stack.Screen name="BackgroundCheck" component={BackgroundCheckScreen} options={{ title: 'Safety Check' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
