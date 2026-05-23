@@ -6,7 +6,7 @@ A React Native dating app built with Expo. Browse profiles, match, and chat — 
 
 | Discover | Matches | Profile |
 |---|---|---|
-| Browse profiles with like/pass | View your matches | Edit your profile |
+| ![Discover](screenshots/discover.png) | ![Matches](screenshots/matches.png) | ![Profile](screenshots/profile.png) |
 
 ## Features
 
